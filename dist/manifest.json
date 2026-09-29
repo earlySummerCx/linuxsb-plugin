@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "LINUX SB 用户资料卡",
+  "version": "0.1.0",
+  "description": "点击头像查看简介、签名、积分与称号，保留论坛阅读位置。",
+  "minimum_chrome_version": "114",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://linux.sb/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
