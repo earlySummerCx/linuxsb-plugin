@@ -2,7 +2,7 @@
 
 一个用于 [LINUX SB](https://linux.sb/) 的 Chrome 扩展。点击用户头像时，在头像附近展开资料卡，查看用户信息后继续阅读当前帖子；需要访问用户主页时，再点击卡片内的入口。
 
-当前版本：`0.1.0`。采用 Chrome Manifest V3，仅在 `https://linux.sb/*` 页面生效。
+当前版本：`0.1.0`。仅在 `https://linux.sb/*` 页面生效。
 
 ## 功能介绍
 
@@ -29,7 +29,7 @@
 
 ## 安装与使用
 
-要求 **Google Chrome 114 或更高版本**。当前通过 GitHub Releases 提供扩展安装包，尚未上架 Chrome 应用商店。
+要求 **Google Chrome 114 或更高版本**。当前通过 GitHub Releases 提供扩展安装包。
 
 1. 打开本项目的 [Releases 下载页面](https://github.com/earlySummerCx/linuxsb-plugin/releases/latest)，下载最新版本的 `linuxsb-user-card-v0.1.0.zip`（不要下载下方自动生成的 Source code）。
 2. 将 ZIP 解压到一个固定文件夹，安装后请保留该文件夹。
@@ -98,23 +98,6 @@ linuxsb-plugin/
 └── README.md
 ```
 
-`work/` 为本地临时检查材料，已配置 Git 忽略，不参与扩展构建。
-
-## 验证状态与限制
-
-目前已通过 **15 项自动化测试**，覆盖资料解析、访问边界、缓存、异步切换、动态头像、骨架屏、更新时保留卡片节点，以及原生称号和完整状态标签的保留。
-
-已在用户 Chrome 的实际 Linux SB 页面验证头像点击拦截、资料读取、原生徽章、长昵称省略、窗口边缘定位、原生状态标签、关闭按钮点击、`Esc` 关闭及主题入口跳转。
-
-以下项目仍需实际站点视觉验收：
-
-- 真实多称号用户的两行横向溢出。
-- 深色主题、完整窄屏布局和弱网加载效果。
-
-详细记录见 [design-qa.md](design-qa.md)。
-
-资料解析依赖当前站点的 HTML 结构和 CSS 类名；站点改版后可能需要同步调整选择器。私信按钮只使用主页实际提供的链接，收藏等目标页面是否可访问由网站决定。
-
 ## 常见问题
 
 **点击头像仍直接跳转怎么办？**
@@ -128,7 +111,3 @@ linuxsb-plugin/
 **为什么称号样式会随网站变化？**
 
 扩展直接复用网站原生样式，未维护独立的称号配色或边框规则。站点样式调整会反映到资料卡中。
-
-## 第三方资源
-
-关闭图标来自 Tabler Icons，采用 MIT 许可证，许可证文件见 [assets/tabler-LICENSE](assets/tabler-LICENSE)。
